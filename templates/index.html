@@ -1,0 +1,37 @@
+{% extends "header.html" %}
+{% block content %}
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">CREAM FACTORY</h1>
+        <h4 class="display-6">Browse through our exquisite restaurant catalog, view their menu and prices of items. </h4>
+        {% if userLoggedIn %}
+          <br>
+        <h4 class="display-6">Add your restaurant to our catalog.</h4>
+        <p><a class="btn btn-primary btn-lg" href="{{ url_for('newRestaurant') }}" role="button">Add Restaurant &#43;</a></p>
+        {% endif %}
+          
+      </div>
+    </div>
+
+    <div class="container">
+
+         <div class="row">
+          {% for restaurant in restaurants %}
+
+            <div class="col-md-6">
+                <h2>{{ restaurant.name }}</h2>
+                <hr>
+                <p><a class="btn  btn-outline-primary my-2 my-sm-0" href="{{ url_for('showMenu', restaurant_id = restaurant.id)}} " role="button">View menu &raquo;</a></p>
+                
+             </div>
+
+          {% endfor %}
+        </div>
+        
+        <hr>
+        <footer>
+            <p>&copy; Sivcan Singh 2017</p>
+        </footer>
+    </div> 
+
+{% endblock %}

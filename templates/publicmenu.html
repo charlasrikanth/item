@@ -1,0 +1,100 @@
+{% extends "header.html" %}
+{% block content %}
+
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h1 class="display-3">{{ restaurant.name }}</h1>
+            </div>
+            <div class="col-md-2">
+                
+            </div>
+        </div>
+     </div>
+</div>
+<div class="container">
+<!--
+	<div class="row">
+		<div class="col-md-12">
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<ul>
+						{% for message in messages %}
+							 <li> <strong> {{ message }} </strong> </li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			{% endwith %}
+		</div>
+	</div>
+-->
+	{% if items !=[] %}	
+		<div class="row">
+			<div class="col-md-3">
+                <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                    <div class="card-header">
+                        <h2>Ice-cream</h2>
+                    </div>
+                    <div class="card-block">
+                      
+                        {% for i in items %}
+						{% if i.course == 'Ice-cream' %}
+                            <h3 class="card-title">{{i.name}}</h3>
+						      <p class="card-text">{{i.description}}</p>
+                            <p class="card-text text-info">{{i.price}}</p>
+						
+						{% endif %}
+					    {% endfor %}
+                    </div>
+                </div>
+            </div>
+					
+			<div class="col-md-3">
+                <div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                    <div class="card-header">
+                        <h2>milkshakes</h2>
+                    </div>
+                    <div class="card-block">
+                      
+                        {% for i in items %}
+						{% if i.course == 'milkshakes' %}
+                            <h3 class="card-title">{{i.name}}</h3>
+						      <p class="card-text">{{i.description}}</p>
+                            <p class="card-text text-info">{{i.price}}</p>
+						
+						{% endif %}
+					    {% endfor %}
+                    </div>
+                </div>
+			</div>
+			<div class="col-md-3">
+				<div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                    <div class="card-header">
+                        <h2>thickshakes</h2>
+                    </div>
+                    <div class="card-block">
+                      
+                        {% for i in items %}
+						{% if i.course == 'thickshakes' %}
+                            <h3 class="card-title">{{i.name}}</h3>
+						      <p class="card-text">{{i.description}}</p>
+                            <p class="card-text text-info">{{i.price}}</p>
+						
+						{% endif %}
+					    {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+				<div class="card card-inverse" style="background-color: #333; border-color: #333;">
+                    
+                        
+						
+                    
+                </div>
+			</div>
+		</div>
+	{% endif %}
+</div>
+{% endblock %}

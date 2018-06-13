@@ -1,0 +1,33 @@
+body            { font-family: sans-serif;
+                  background-image: url('https://bit.ly/2dwmEiW');
+                  background-image:no-repeat;}
+ h1, h2, h3, h4       { color:  green; }
+h1, h2          { font-family: 'Georgia', serif; margin: 0; }
+h1              { border-bottom: 2px solid #c68c53; }
+h2              { font-size: 2em; }
+.top-menu {
+	padding-top: 25px;
+	padding-bottom: 25px;
+
+p               { color: #b3b3b3;}
+
+a {text-decoration: none; 
+    color:#999999; 
+    font-size: .85em;}
+
+.tour {position:absolute; 
+      left: 25%;
+       border: 2px solid;
+    border-radius: 25px; 
+    padding: 5px; 
+    margin: 5px; 
+    border-color: red; 
+    background-color: red; }
+.header         {left:50%;
+               text-align: center;}
+.name {width:50%;display: inline-block; float: left;}
+
+.price {text-align: right; width:50%; float: right; }
+
+
+.flash          { background: #994d00; }
